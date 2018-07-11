@@ -123,7 +123,7 @@ console.log(arc)
         .attr("class", "group-tick")
         .attr("transform", function(d) {
           console.log(d);
-          return "rotate(" + (d.midAngle * 180 / Math.PI - 75) +
+          return "rotate(" + (d.midAngle * 180 / Math.PI - 90) +
             ") translate(" + outerRadius + ",2)";
         });
 
