@@ -12,29 +12,51 @@ export class AppComponent {
   ngAfterContentInit() {
     var matrixData={
       "Occupants":
-      [0, 10,10,10,10,0,0,0,10,10,10,10,10],
+      [0, 10,10,10,10,0,0,0,10,10,10,10,10, 10,10,10,10,0,0,0,10,10,10,10,10],
       Flooring:
-      [70,0,0,0,0,0,30,0,0,0,0,0,0],
+      [70,0,0,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0],
       Millwork:
-      [40, 0,0,0,0,0,60,0,0,0,0,0],
+      [40, 0,0,0,0,0,60,0,0,0,0,0, 0,0,0,0,0,60,0,0,0,0,0],
       Ceilings:
-      [60, 0,0,0,0,0,40,0,0,0,0,0,0],
+      [60, 0,0,0,0,0,40,0,0,0,0,0,0, 0,0,0,0,0,40,0,0,0,0,0,0],
       "Wet Applied Products":
-      [60, 0,0,0,0,0,40,0,0,0,0,0,0],
+      [60, 0,0,0,0,0,40,0,0,0,0,0,0, 0,0,0,0,0,40,0,0,0,0,0,0],
       "Curtain Wall":
-      [0, 0,0,0,0,0,100,0,0,0,0,0,0],
+      [0, 0,0,0,0,0,100,0,0,0,0,0,0, 0,0,0,0,0,100,0,0,0,0,0,0],
       "Environment":
-      [0, 10,10,10,10,0,10,0,10,10,10,0,10],
+      [0, 10,10,10,10,0,10,0,10,10,10,0,10, 10,10,10,10,0,10,0,10,10,10,0,10],
       Roofing:
-      [0, 0,0,0,0,0,100,0,0,0,0,0,0],
+      [0, 0,0,0,0,0,100,0,0,0,0,0,0, 0,0,0,0,0,100,0,0,0,0,0,0],
       Insulation:
-      [50, 0,0,0,0,0,50,0,0,0,0,0,0],
+      [50, 0,0,0,0,0,50,0,0,0,0,0,0, 0,0,0,0,0,50,0,0,0,0,0,0],
       MEPFP:
-      [40, 0,0,0,0,0,60,0,0,0,0,0,0],
+      [40, 0,0,0,0,0,60,0,0,0,0,0,0, 0,0,0,0,0,60,0,0,0,0,0,0],
       Structure:
-      [50, 0,0,0,0,0,50,0,0,0,0,0,0],
+      [50, 0,0,0,0,0,50,0,0,0,0,0,0, 0,0,0,0,0,50,0,0,0,0,0,0],
       "Furniture":
-      [90, 0,0,0,0,0,10,0,0,0,0,0,0]
+      [900, 0,0,0,0,0,10,0,0,0,0,0,0, 0,0,0,0,0,10,0,0,0,0,0,0],
+      "Occupants":
+      [0, 10,10,10,10,0,0,0,10,10,10,10,10, 10,10,10,10,0,0,0,10,10,10,10,10],
+      Flooring2:
+      [70,0,0,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0],
+      Millwork3:
+      [40, 0,0,0,0,0,60,0,0,0,0,0, 0,0,0,0,0,60,0,0,0,0,0],
+      Ceilings4:
+      [60, 0,0,0,0,0,40,0,0,0,0,0,0, 0,0,0,0,0,40,0,0,0,0,0,0],
+      "Wet  5 Applied Products":
+      [60, 0,0,0,0,0,40,0,0,0,0,0,0, 0,0,0,0,0,40,0,0,0,0,0,0],
+      "Curtain 6  Wall":
+      [0, 0,0,0,0,0,100,0,0,0,0,0,0, 0,0,0,0,0,100,0,0,0,0,0,0],
+      "Environment 7":
+      [0, 10,10,10,10,0,10,0,10,10,10,0,10, 10,10,10,10,0,10,0,10,10,10,0,10],
+      Roofing8:
+      [0, 0,0,0,0,0,100,0,0,0,0,0,0, 0,0,0,0,0,100,0,0,0,0,0,0],
+      Insulation9:
+      [50, 0,0,0,0,0,50,0,0,0,0,0,0, 0,0,0,0,0,50,0,0,0,0,0,0],
+      MEPFP10:
+      [40, 0,0,0,0,0,60,0,0,0,0,0,0, 0,0,0,0,0,60,0,0,0,0,0,0],
+      Structure11:
+      [50, 0,0,0,0,0,50,0,0,0,0,0,0, 0,0,0,0,0,50,0,0,0,0,0,0],
     };
 
     var matrix= Object.values(matrixData);
@@ -55,7 +77,7 @@ export class AppComponent {
     var arc = d3.arc()
         .innerRadius(innerRadius)
         .outerRadius(outerRadius);
-
+console.log(arc)
     var ribbon = d3.ribbon()
         .radius(innerRadius);
 
@@ -83,7 +105,12 @@ export class AppComponent {
         .attr("class", "groups")
       .selectAll("g")
       .data(function(chords) { return chords.groups; })
-      .enter().append("g");
+      .enter().append("g")
+      .attr('class', 'groups')
+      .on('mouseover', fade(.1))
+      .on('mouseout', fade(1));
+
+
 
     group.append("path")
         .style("fill", function(d) { return color(d.index); })
@@ -95,7 +122,8 @@ export class AppComponent {
       .enter().append("g")
         .attr("class", "group-tick")
         .attr("transform", function(d) {
-          return "rotate(" + (d.angle * 180 / Math.PI - 75) +
+          console.log(d);
+          return "rotate(" + (d.midAngle * 180 / Math.PI - 75) +
             ") translate(" + outerRadius + ",2)";
         });
 
@@ -118,9 +146,11 @@ export class AppComponent {
       .selectAll("path")
       .data(function(chords) { return chords; })
       .enter().append("path")
+        .attr('class', 'chord')
         .attr("d", ribbon)
         .style("fill", function(d) { return color(d.target.index); })
-        .style("stroke", function(d) { return d3.rgb(color(d.target.index)).darker(); });
+        .style("stroke", function(d) { return d3.rgb(color(d.target.index)).darker(); })
+        ;
 
     // Returns an array of tick angles and values for a given group and step.
     function groupTicks(d, step) {
@@ -130,8 +160,20 @@ export class AppComponent {
           index:d.index,
           value: value,
           angle: value * k + d.startAngle
+          startAngle: d.startAngle
+          endAngle: d.endAngle
+          midAngle: (d.startAngle + d.endAngle) / 2
         };
       });
+    }
+    function fade(opacity) {
+      return function(d, i) {
+        svg.selectAll('path.chord')
+        .filter(function(d) { return d['source'].index !== i && d['target'].index !== i; })
+        .transition()
+        .style('opacity', opacity);
+
+      };
     }
   }
 }
