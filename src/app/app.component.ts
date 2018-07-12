@@ -35,7 +35,7 @@ export class AppComponent {
       [50, 0,0,0,0,0,50,0,0,0,0,0,0, 0,0,0,0,0,50,0,0,0,0,0,0],
       "Furniture":
       [900, 0,0,0,0,0,10,0,0,0,0,0,0, 0,0,0,0,0,10,0,0,0,0,0,0],
-      "Occupants":
+      "Occupants1":
       [0, 10,10,10,10,0,0,0,10,10,10,10,10, 10,10,10,10,0,0,0,10,10,10,10,10],
       Flooring2:
       [70,0,0,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0],
@@ -159,9 +159,9 @@ console.log(arc)
         return {
           index:d.index,
           value: value,
-          angle: value * k + d.startAngle
-          startAngle: d.startAngle
-          endAngle: d.endAngle
+          angle: value * k + d.startAngle,
+          startAngle: d.startAngle,
+          endAngle: d.endAngle,
           midAngle: (d.startAngle + d.endAngle) / 2
         };
       });
