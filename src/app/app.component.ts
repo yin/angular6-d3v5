@@ -135,8 +135,8 @@ console.log(arc)
       .append("text")
         .attr("x", 8)
         .attr("dy", ".35em")
-        .attr("transform", function(d) { return d.midAngle > 0 && d.midAngle < Math.PI ? "rotate(180) translate(-16)" : null; })
-        .style("text-anchor", function(d) { return d.midAngle > 0 && d.midAngle < Math.PI ? "end" : null; })
+        .attr("transform", function(d) { return d.midAngle > Math.PI && d.midAngle < 2*Math.PI ? "rotate(180) translate(-16)" : null; })
+        .style("text-anchor", function(d) { return d.midAngle > Math.PI && d.midAngle < 2*Math.PI? "end" : null; })
         .text(function(d) {
       return matrixKeys[d.index];
     });
