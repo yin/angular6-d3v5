@@ -98,7 +98,7 @@ console.log(arc)
                ]);
 
     var g = svg.append("g")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ") rotate(75)")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ") rotate(0)")
         .datum(chord(matrix));
 
     var group = g.append("g")
@@ -135,8 +135,8 @@ console.log(arc)
       .append("text")
         .attr("x", 8)
         .attr("dy", ".35em")
-        .attr("transform", function(d) { return d.midAngle > Math.PI/2 && d.midAngle < Math.PI*3/2 ? "rotate(180) translate(-16)" : null; })
-        .style("text-anchor", function(d) { return d.midAngle > Math.PI/2 && d.midAngle < Math.PI*3/2? "end" : null; })
+        .attr("transform", function(d) { return d.midAngle > 0 && d.midAngle < Math.PI ? "rotate(180) translate(-16)" : null; })
+        .style("text-anchor", function(d) { return d.midAngle > 0 && d.midAngle < Math.PI ? "end" : null; })
         .text(function(d) {
       return matrixKeys[d.index];
     });
